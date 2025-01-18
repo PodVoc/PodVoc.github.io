@@ -107,20 +107,78 @@
         <div class="screenshot-container">
           <img class="preview-image" src="Frame 11.jpg" alt="App Preview 6" loading="lazy">
         </div>
-          <div class="info-section">
-                <h2 class="section-title">Contact Us</h2>
-            <a href="mailto:brkda.app@gmail.com">Feedback and Contact</a>
-             <h2 class="section-title">Privacy Policy</h2>
-                  <button onclick="window.location.href='#privacy-policy'" class="privacy-button">
-                    Privacy Policy
-                  <span class="arrow-icon">›</span>
-                </button>
+        <div class="info-section">
+          <h2 class="section-title">Contact Us</h2>
+          <a href="mailto:brkda.app@gmail.com" class="contact-link">Feedback and Contact</a>
+          
+          <h2 class="section-title">Legal</h2>
+          <div class="privacy-container">
+            <button onclick="togglePrivacy()" class="privacy-button">
+              Privacy Policy
+            </button>
+            <div id="privacyContent" class="privacy-content">
+              <p class="last-updated">Last Updated: January 18, 2025</p>
+              
+              <h3>Overview</h3>
+              <p>We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our podcast learning app.</p>
+              
+              <h3>Information We Collect</h3>
+              <ul>
+                <li>Account information (email, display name)</li>
+                <li>Learning preferences and history</li>
+                <li>Podcast interaction data</li>
+                <li>Device information and app usage statistics</li>
+              </ul>
+              
+              <h3>How We Use Your Data</h3>
+              <p>We use your information to:</p>
+              <ul>
+                <li>Personalize your learning experience</li>
+                <li>Track your progress and vocabulary growth</li>
+                <li>Improve our app features and content</li>
+                <li>Provide technical support</li>
+              </ul>
+              
+              <h3>Data Protection</h3>
+              <p>We implement appropriate security measures to protect your personal information. Your data is encrypted and stored securely.</p>
+              
+              <h3>Your Rights</h3>
+              <p>You have the right to:</p>
+              <ul>
+                <li>Access your personal data</li>
+                <li>Request data correction or deletion</li>
+                <li>Export your learning data</li>
+                <li>Opt-out of promotional communications</li>
+              </ul>
+              
+              <h3>Contact Us</h3>
+              <p>For any privacy-related questions or concerns, please contact us at brkda.app@gmail.com</p>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
         
       </div>
     </div>
 
     <!-- Rest of your content sections remain the same -->
   </div>
+    <script>
+    function togglePrivacy() {
+      const content = document.getElementById('privacyContent');
+      content.classList.toggle('show');
+    }
+
+    // Close privacy policy when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.privacy-button')) {
+        const content = document.getElementById('privacyContent');
+        if (content.classList.contains('show')) {
+          content.classList.remove('show');
+        }
+      }
+    }
+  </script>
 </body>
 </html>
